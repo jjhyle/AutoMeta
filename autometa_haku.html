@@ -1,4 +1,5 @@
 <html>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <body>
       <script language = "javascript" type = "text/javascript">
          //<-- 
@@ -25,7 +26,7 @@
                   }
                }
             }
-            
+          
             // Create a function that will receive data
             // sent from the server and will update
             // div section in the same page.
@@ -34,6 +35,7 @@
                if(ajaxRequest.readyState == 4) {
                   var ajaxDisplay = document.getElementById('ajaxDiv');
                   ajaxDisplay.innerHTML = ajaxRequest.responseText;
+                //  ajaxDisplay.innerHTML = ajaxRequest.responseXML;
                }
             }
             
@@ -44,16 +46,34 @@
             ajaxRequest.open("GET", "autometa_haku.php?sana=" + sana, true);
             ajaxRequest.send(null); 
          }
-         //-->
+         
+          //-->
       </script>
 
       <form name = 'myForm'>
- 
-        Give seach word: <input type = 'text' id = 'sana' /> <br />
-         
-         <input type = 'button' onclick = 'ajaxFunction()' value = 'Seach'/>
-      </form>
+
+            <p style="font-size:50px;">
+        Search pictures with keyword: <input type = 'text' width='500' id = 'sana' /> <br />
+            </p>
+            <style>
+            .button {
+               background-color: #4CAF50; /* Green */
+               border: none;
+               color: white;
+               padding: 15px 32px;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 16px;
+             }
+             </style>
+              <input type = 'button' class="button" onclick = 'ajaxFunction()' value = 'Seach'/>
       
-      <div id = 'ajaxDiv'>Your result will display here</div>
+      </form>
+
+      <div id = 'ajaxDiv'>Your result will display here
+    <!--  <a href="dog.jpeg" class="linkki">kuva</a> -->
+      </div>
+      
    </body>
 </html>

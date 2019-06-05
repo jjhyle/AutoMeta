@@ -46,7 +46,7 @@ $sana = $_GET['sana'];
 	
 //build query
 // $query = "SELECT * FROM haku WHERE keyword LIKE '%$sana%' ORDER BY user_id, keyword, picture_id";
-$query = "SELECT gallery.keyword, pictures.picturename, users.username
+$query = "SELECT gallery.keyword, pictures.picturename, pictures.location, users.username
 FROM gallery
 LEFT JOIN pictures ON gallery.picture_id=pictures.picture_id
 LEFT JOIN users ON gallery.user_id=users.id
@@ -70,6 +70,7 @@ $display_string .= "<tr>";
 // $display_string .= "<th>random_id</th>";
 $display_string .= "<th>Keyword</th>";
 $display_string .= "<th>Picture name</th>";
+$display_string .= "<th>Location</th>";
 $display_string .= "<th>User name</th>";
 $display_string .= "</tr>"; 
 
@@ -81,7 +82,10 @@ $display_string .= "</tr>";
    $display_string .= "<td><font color=#f35656 size=6>$row[keyword]</td>";
    $link_id = $row[picturename];
    $display_string .= "<td><a href=$link_id>$row[picturename]<img src=$link_id style=width:50px;height:50px;></a></td>";
+   $loc_id = $row[location];
+   $display_string .= "<td><a href=$loc_id>$row[location]<img src=$loc_id style=width:50px;height:50px;></a></td>";
    $display_string .= "<td>$row[username]</td>";         
+   // echo "<td>$row</td>";
 //   $display_string .= "<td>$row<a href='https://www.google.com/'>demo text</a></td>";
    $display_string .= "</tr>";  
 }

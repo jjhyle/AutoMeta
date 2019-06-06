@@ -15,7 +15,7 @@
 			if($sqlquery->num_rows > 0){
 				while($ldata = $sqlquery->fetch_assoc()){
 					$results['data'] .= "
-						<li class='list-gpfrm-list' data-fullname='".$ldata['name']." ".$ldata['sirname']."'>".$ldata['name']." ".$ldata['sirname']."</li>
+						<li class='list-gpfrm-list' data-fullname='".$ldata['   ']." ".$ldata['sirname']."'>".$ldata['name']." ".$ldata['sirname']."</li>
 					";
 				}
 			}

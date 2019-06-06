@@ -1,7 +1,8 @@
 
 <?php
 
-/*$dbhost = "localhost";
+/*
+$dbhost = "localhost";
 $dbuser = "admin";
 $dbpass = "Q2werty1234";
 $dbname = "autometa";
@@ -61,7 +62,5 @@ if(empty($querystr)){
 //echo "Query: " . $query . "<br />";;
 // echo json_encode($response);
 echo json_encode($results);
-
-// echo $display_string;
 }
 ?>

@@ -43,7 +43,7 @@ $querystr = $_POST['querystr'];
 if(empty($querystr)){
     $results['error'] = true;
 }else{
-    $sql = "SELECT * FROM keywords WHERE keyword LIKE '$querystr%'";
+    $sql = "SELECT * FROM keywords WHERE keyword LIKE '%$querystr%'";
     $sqlquery = $conn->query($sql);
     if($sqlquery->num_rows > 0){
         while($ldata = $sqlquery->fetch_assoc()){
